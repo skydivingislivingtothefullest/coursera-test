@@ -1,3 +1,4 @@
+
 """Display a spinning ASCII doughnut in the terminal."""
 
 import math
@@ -5,6 +6,7 @@ import sys
 import time
 
 # Rotation angles for the animation
+
 A = 0.0
 B = 0.0
 
@@ -26,6 +28,7 @@ while True:
             h = d + 2
             D = 1 / (c * h * e + f * g + 5)
             l = math.cos(i_r)
+
             m = math.cos(B)
             n = math.sin(B)
             t = c * h * g - f * e
@@ -33,10 +36,12 @@ while True:
             x = int(40 + 30 * D * (l * h * m - t * n))
             y = int(12 + 15 * D * (l * h * n + t * m))
             o = x + 80 * y
+
             N = int(8 * ((f * e - c * d * g) * m - c * d * e - f * g - l * d * n))
             if 0 <= y < 22 and 0 <= x < 80 and D > z[o]:
                 z[o] = D
                 b[o] = ".,-~:;=!*#$@"[max(N, 0)]
+
 
     # Move cursor to top-left and render the frame with newlines
     sys.stdout.write("\x1b[H")
